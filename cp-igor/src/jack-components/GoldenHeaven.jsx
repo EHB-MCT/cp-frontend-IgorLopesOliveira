@@ -30,17 +30,17 @@ function GoldenHeaven({ scrollY, show }) {
       </h1>
 
       {/* golden jack image */}
-      <img src="/images/jack111.png" style={{ width: "150px", marginBottom: "20px" }} />
+      <img src="./images/jack111.png" style={{ width: "150px", marginBottom: "20px" }} />
 
       {/* golden hen image */}
-      <img src="/images/hen.png" style={{ width: "120px" }} />
+      <img src="./images/hen.png" style={{ width: "120px" }} />
 
       {/* floating golden eggs */}
       <div style={{ display: "flex", gap: "15px", marginTop: "30px" }}>
         {[...Array(5)].map((_, i) => (
           <img
             key={i}
-            src="/images/egg.png"
+            src="./images/egg.png"
             style={{
               width: "40px",
               animation: `float ${2 + i % 2}s ease-in-out infinite`, // slight variation in float timing

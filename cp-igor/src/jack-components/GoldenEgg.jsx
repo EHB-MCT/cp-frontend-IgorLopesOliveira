@@ -19,7 +19,7 @@ function GoldenEgg({ style, onClick }) {
   // render the golden egg image with click handler and custom positioning
   return (
     <img
-      src="/images/egg.png"
+      src="./images/egg.png"
       className="golden-egg"
       style={style}
       onClick={handleClick}

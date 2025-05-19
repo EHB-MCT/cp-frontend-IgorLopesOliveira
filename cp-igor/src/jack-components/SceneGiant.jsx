@@ -22,7 +22,7 @@ function SceneGiant({ scrollY, onEggClick }) {
       {/* wall background and narrative text */}
       <div className="wall-scene-container">
         <img
-          src="/images/wall.png"
+          src="./images/wall.png"
           className="wall"
           style={{ transform: `translateY(${offsetY * 0.2}px)` }}
         />
@@ -37,23 +37,23 @@ function SceneGiant({ scrollY, onEggClick }) {
       </div>
 
       {/* foreground characters and items */}
-      <img src="/images/giant.png" className="giant" />
-      <img src="/images/hen.png" className="hen" />
-      <img src="/images/harp.png" className="harp" />
+      <img src="./images/giant.png" className="giant" />
+      <img src="./images/hen.png" className="hen" />
+      <img src="./images/harp.png" className="harp" />
 
       {/* background clouds with parallax movement */}
       <img
-        src="/images/cloud3.png"
+        src="./images/cloud3.png"
         className="cloud-1"
         style={{ transform: `translateY(${offsetY * 0.2}px)` }}
       />
       <img
-        src="/images/cloud1.png"
+        src="./images/cloud1.png"
         className="cloud-2"
         style={{ transform: `translateY(${offsetY * 0.2}px)` }}
       />
       <img
-        src="/images/cloud2.png"
+        src="./images/cloud2.png"
         className="cloud-3"
         style={{ transform: `translateY(${offsetY * 0.2}px)` }}
       />

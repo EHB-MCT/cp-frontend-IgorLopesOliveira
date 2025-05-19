@@ -45,7 +45,7 @@ function App() {
       <LayoutWrapper onSearch={setSearchItem} onGenreSelect={handleGenreSelect}>
         <Routes>
           <Route
-            path="/"
+            path="/cp-frontend-IgorLopesOliveira/"
             element={
               <>
                 <SlideShow slides={slides} />
@@ -53,9 +53,9 @@ function App() {
               </>
             }
           />
-          <Route path="/sprookje" element={<JackStory />} />
-          <Route path="/makingof" element={<MakingOf />} />
-          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/cp-frontend-IgorLopesOliveira/sprookje" element={<JackStory />} />
+          <Route path="/cp-frontend-IgorLopesOliveira/makingof" element={<MakingOf />} />
+          <Route path="/cp-frontend-IgorLopesOliveira/aboutus" element={<AboutUs />} />
         </Routes>
       </LayoutWrapper>
     </Router>

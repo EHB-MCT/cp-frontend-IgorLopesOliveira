@@ -121,3 +121,5 @@ This project is educational and non-commercial. Visuals either belong to the cre
 - https://canvas.ehb.be/courses/40436
 - https://www.w3schools.com/react/default.asp
 - https://stackoverflow.com/questions/69966907/slideshow-using-react-hooks-and-setinterval
+- https://github.com/IgorLopesOliveira/cp-frontend-IgorLopesOliveira-main
+

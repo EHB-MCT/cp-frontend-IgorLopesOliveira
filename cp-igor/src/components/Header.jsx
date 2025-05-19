@@ -23,8 +23,8 @@ function Header({ onSearch, onGenreSelect }) {
     <header className="header">
       {/* logo section on the left, links to the home page */}
       <div className="header-left">
-        <Link to="/">
-          <img src="/images/logo.png" alt="My Logo" className="logo" />
+        <Link to="/cp-frontend-IgorLopesOliveira/">
+          <img src="./images/logo.png" alt="My Logo" className="logo" />
         </Link>
       </div>
 
@@ -38,7 +38,7 @@ function Header({ onSearch, onGenreSelect }) {
             <ul className="nav-links">
               {/* dropdown menu for genre selection */}
               <li className="dropdown" onClick={toggleDropdown}>
-                <Link to="/">SPROOKJES</Link>
+                <Link to="/cp-frontend-IgorLopesOliveira/">SPROOKJES</Link>
                 {/* genre filter menu appears when dropdownOpen is true */}
                 {dropdownOpen && (
                   <ul className="dropdown-menu">
@@ -52,8 +52,8 @@ function Header({ onSearch, onGenreSelect }) {
               </li>
 
               {/* navigation links to making of and about us pages */}
-              <li><Link to="/makingof">MAKING OF</Link></li>
-              <li><Link to="/aboutus">ABOUT US</Link></li>
+              <li><Link to="/cp-frontend-IgorLopesOliveira/makingof">MAKING OF</Link></li>
+              <li><Link to="/cp-frontend-IgorLopesOliveira/aboutus">ABOUT US</Link></li>
             </ul>
           </nav>
         )}

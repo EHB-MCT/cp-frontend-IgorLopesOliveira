@@ -17,7 +17,7 @@ function MakingOf() {
 
       {/* banner image at the top */}
       <div className="banner-container">
-        <img src="/images/bean-banner.png" alt="Banner" className="banner-image" />
+        <img src="./images/bean-banner.png" alt="Banner" className="banner-image" />
       </div>
 
       {/* section with story description and an illustration */}
@@ -30,7 +30,7 @@ function MakingOf() {
         </div>
 
         <div className="image-section">
-          <img src="/images/box1.png" alt="Making Of" className="side-image" />
+          <img src="./images/box1.png" alt="Making Of" className="side-image" />
         </div>
       </div>
 
@@ -74,9 +74,9 @@ function MakingOf() {
 
         {/* collage of extra images */}
         <div className="extra-images">
-          <img src="/images/box2.png" alt="Source 1" className="extra-image" />
-          <img src="/images/box3.png" alt="Source 2" className="extra-image" />
-          <img src="/images/box5.png" alt="Source 3" className="extra-image" />
+          <img src="./images/box2.png" alt="Source 1" className="extra-image" />
+          <img src="./images/box3.png" alt="Source 2" className="extra-image" />
+          <img src="./images/box5.png" alt="Source 3" className="extra-image" />
         </div>
 
         <p className="text-paragraph">

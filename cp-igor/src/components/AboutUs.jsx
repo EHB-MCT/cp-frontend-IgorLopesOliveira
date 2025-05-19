@@ -22,7 +22,7 @@ function AboutUs() {
 
           {/* button linking back to the homepage with all projects */}
           <div className="about-button">
-            <Link to="/">
+            <Link to="/cp-frontend-IgorLopesOliveira/">
               <button className="all-projects-button">ALL PROJECTS</button>
             </Link>
           </div>
@@ -30,11 +30,11 @@ function AboutUs() {
 
         {/* right side with collage of student project images */}
         <div className="image-collage">
-          <img src="/images/au1.png" alt="Project 1" className="collage-img img1" />
-          <img src="/images/au2.png" alt="Project 2" className="collage-img img2" />
-          <img src="/images/au3.png" alt="Project 3" className="collage-img img3" />
-          <img src="/images/au4.png" alt="Project 4" className="collage-img img4" />
-          <img src="/images/au5.png" alt="Project 5" className="collage-img img5" />
+          <img src="./images/au1.png" alt="Project 1" className="collage-img img1" />
+          <img src="./images/au2.png" alt="Project 2" className="collage-img img2" />
+          <img src="./images/au3.png" alt="Project 3" className="collage-img img3" />
+          <img src="./images/au4.png" alt="Project 4" className="collage-img img4" />
+          <img src="./images/au5.png" alt="Project 5" className="collage-img img5" />
         </div>
 
       </div>

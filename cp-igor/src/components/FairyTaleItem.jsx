@@ -3,13 +3,16 @@ import { Link } from "react-router-dom";
 
 // receives props for the fairy tale item card
 function FairyTaleItem({ image, studentName, fairyTaleTitle, genre, link, internal }) {
+  // fix the image path for GitHub Pages subdirectory deployment
+  const imagePath = `${import.meta.env.BASE_URL}${image}`;
+
   // reusable content block for both internal and external links
   const content = (
     <>
-      <img src={image} alt={studentName} className="fairy-image" />  {/* thumbnail image */}
-      <h3 className="fairy-title">{fairyTaleTitle}</h3>              {/* title of the story */}
-      <p className="fairy-student">{studentName}</p>                 {/* student name */}
-      <p className="fairy-genre">{genre}</p>                         {/* genre tag */}
+      <img src={imagePath} alt={studentName} className="fairy-image" /> {/* thumbnail image */}
+      <h3 className="fairy-title">{fairyTaleTitle}</h3>                {/* title of the story */}
+      <p className="fairy-student">{studentName}</p>                   {/* student name */}
+      <p className="fairy-genre">{genre}</p>                           {/* genre tag */}
     </>
   );
 

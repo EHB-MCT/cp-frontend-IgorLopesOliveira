@@ -67,7 +67,7 @@ function TextClouds({ scrollY }) {
         left: "50%",                     // centered horizontally
         transform: "translateX(-50%)",   // adjust position to truly center
         padding: "20px 30px",
-        background: `url(/images/text-cloud.png) no-repeat center/contain`, // bubble background
+        background: `url(./images/text-cloud.png) no-repeat center/contain`, // bubble background
         width: "400px",
         height: "120px",
         display: "flex",

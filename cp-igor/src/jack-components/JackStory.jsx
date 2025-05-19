@@ -14,7 +14,7 @@ function JackStory() {
   const [scrollY, setScrollY] = useState(0);
 
   // stores current jack image based on scroll
-  const [jackImage, setJackImage] = useState("/images/jack111.png");
+  const [jackImage, setJackImage] = useState("./images/jack111.png");
 
   // keeps track of how many golden eggs have been collected
   const [eggCount, setEggCount] = useState(0);
@@ -37,19 +37,19 @@ function JackStory() {
       setScrollY(y);
 
       if (y >= 13500 && y <= 14500) {
-        setJackImage("/images/jack3.png");
+        setJackImage("./images/jack3.png");
       } else if (y >= 11500 && y <= 12500) {
-        setJackImage("/images/jack2.png");
+        setJackImage("./images/jack2.png");
       } else if (y >= 9500 && y <= 10500) {
-        setJackImage("/images/jack3.png");
+        setJackImage("./images/jack3.png");
       } else if (y >= 6000 && y <= 9500) {
-        setJackImage("/images/jack2.png");
+        setJackImage("./images/jack2.png");
       } else if (y >= 5000 && y <= 6000) {
-        setJackImage("/images/jack111.png");
+        setJackImage("./images/jack111.png");
       } else if (y >= 2000 && y <= 3000) {
-        setJackImage("/images/jack3.png");
+        setJackImage("./images/jack3.png");
       } else if (y >= 0 && y <= 2000) {
-        setJackImage("/images/jack2.png");
+        setJackImage("./images/jack2.png");
       }
     };
 
@@ -116,7 +116,7 @@ function JackStory() {
       <div className="egg-counter">🥚 {eggCount} / 5</div>
 
       {/* background music that loops */}
-      <audio ref={audioRef} src="/sounds/bgm1.mp3" loop />
+      <audio ref={audioRef} src="./sounds/bgm1.mp3" loop />
 
       {/* mute/unmute toggle button */}
       <button

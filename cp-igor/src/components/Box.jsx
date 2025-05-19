@@ -2,11 +2,14 @@ import { Link } from "react-router-dom";
 
 // box component displays a single fairy tale card with image and text
 const Box = ({ image, studentName, fairyTaleTitle, genre, link, internal }) => {
+  // build the correct image path for GitHub Pages
+  const imagePath = `${import.meta.env.BASE_URL}${image}`;
+
   // content to be wrapped inside a link
   const content = (
     <>
       {/* image for the fairy tale */}
-      <img src={image} alt={studentName} className="image" />
+      <img src={imagePath} alt={studentName} className="image" />
 
       {/* student's name */}
       <p className="student-name">{studentName}</p>

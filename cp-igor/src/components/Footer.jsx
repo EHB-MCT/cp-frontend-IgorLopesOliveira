@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="footer-container">
 
         {/* logo on the left side */}
-        <img src="/images/logo.png" alt="My Logo" className="footer-logo" />
+        <img src="./images/logo.png" alt="My Logo" className="footer-logo" />
 
         {/* description and about us link on the right */}
         <div className="footer-text">
@@ -19,7 +19,7 @@ const Footer = () => {
           </p>
 
           {/* button linking to the about us page */}
-          <Link to="/aboutus">
+          <Link to="/cp-frontend-IgorLopesOliveira/aboutus">
             <button className="footer-button">About Us</button>
           </Link>
         </div>

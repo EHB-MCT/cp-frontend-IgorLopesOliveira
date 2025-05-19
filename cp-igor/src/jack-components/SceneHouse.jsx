@@ -21,38 +21,38 @@ function SceneHouse({ scrollY, onEggClick }) {
 
       {/* background clouds with different speeds for parallax effect */}
       <img
-        src="/images/cloud2.png"
+        src="./images/cloud2.png"
         className="cloud cloud-1"
         style={{ transform: `translateY(${offsetY * 0.2}px)` }}
       />
       <img
-        src="/images/cloud3.png"
+        src="./images/cloud3.png"
         className="cloud cloud-2"
         style={{ transform: `translateY(${offsetY * 0.15}px)` }}
       />
       <img
-        src="/images/cloud1.png"
+        src="./images/cloud1.png"
         className="cloud cloud-3"
         style={{ transform: `translateY(${offsetY * 0.1}px)` }}
       />
 
       {/* mountain background layer */}
       <img
-        src="/images/bg1.png"
+        src="./images/bg1.png"
         className="mountains1"
         style={{ transform: `translateY(${offsetY * 0.25}px)` }}
       />
 
       {/* tree image with faster parallax movement */}
       <img
-        src="/images/tree3.png"
+        src="./images/tree3.png"
         className="tree1 tree-left"
         style={{ transform: `translateY(${offsetY * 0.6}px)` }}
       />
 
       {/* grass foreground and narrative text block */}
       <div className="grass-container">
-        <img src="/images/grass2.png" className="grass1" />
+        <img src="./images/grass2.png" className="grass1" />
         <div className="grass-text">
           <p>
             Jack wandered into the village market, clutching the leash of the family's only cow.
@@ -68,7 +68,7 @@ function SceneHouse({ scrollY, onEggClick }) {
       </div>
 
       {/* house image in foreground */}
-      <img src="/images/house1.png" className="house" />
+      <img src="./images/house1.png" className="house" />
     </div>
   );
 }
