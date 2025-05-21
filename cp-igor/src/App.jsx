@@ -15,11 +15,11 @@ import slides from './api/slides.json';
 // wrapper to conditionally render header/footer
 function LayoutWrapper({ children, onSearch, onGenreSelect }) {
   const location = useLocation();
-  const isFairyTalePage = location.pathname === "/sprookje";
+  const isFairyTalePage = location.pathname.endsWith("/sprookje");
 
   return (
     <>
-      {!isFairyTalePage && <Header onSearch={onSearch} onGenreSelect={onGenreSelect} />}
+      <Header onSearch={onSearch} onGenreSelect={onGenreSelect} />
       {children}
       {!isFairyTalePage && <Footer />}
     </>

@@ -17,7 +17,7 @@ function Stars({ top = 2300 }) {
     >
       {/* moon image fixed in the top right of the scene */}
       <img
-        src="/images/moon.png"
+        src="./images/moon.png"
         alt="Moon"
         className="moon"
         style={{

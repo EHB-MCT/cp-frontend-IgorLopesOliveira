@@ -30,7 +30,7 @@ function MakingOf() {
           <p className="text-paragraph">
             Overnight, the beans grow into a gigantic beanstalk that stretches high into the sky. Curious and brave, Jack climbs it and discovers a magical land above the clouds. There, he finds a castle inhabited by a fearsome giant who owns incredible treasures: a hen that lays golden eggs, a singing harp, and piles of gold.          </p>
           <p className="text-paragraph">
-            Through courage and quick thinking, Jack manages to steal some of the treasures and escape the giant’s wrath. In the final attempt, as the giant chases him down the stalk, Jack grabs an axe and chops it down just in time, sending the giant falling to his doom. Jack and his mother are no longer poor, and they live happily ever after — thanks to a little magic and a lot of bravery.          </p>
+            Through courage and quick thinking, Jack manages to steal some of the treasures and escape the giant's wrath. In the final attempt, as the giant chases him down the stalk, Jack grabs an axe and chops it down just in time, sending the giant falling to his doom. Jack and his mother are no longer poor, and they live happily ever after — thanks to a little magic and a lot of bravery.          </p>
         </div>
 
         <div className="image-section">
@@ -46,7 +46,7 @@ function MakingOf() {
             This website is an interactive scroll-based journey that tells the story of Jack and the Beanstalk. As you scroll upward, you follow Jack's adventure from the market trade to the towering beanstalk, the castle in the sky, and the final escape from the giant. The storytelling is immersive and linear, designed as one continuous vertical experience.
           </p>
           <p className="text-paragraph">
-            The background features a vertical gradient from light blue to dark blue, visually representing Jack’s climb from the earth to the sky. Each scene is layered with parallax elements—clouds, trees, mountains, and props—that move at different speeds to create a sense of depth and animation.
+            The background features a vertical gradient from light blue to dark blue, visually representing Jack's climb from the earth to the sky. Each scene is layered with parallax elements—clouds, trees, mountains, and props—that move at different speeds to create a sense of depth and animation.
           </p>
           <p className="text-paragraph">
             To bring the story to life, text clouds appear above Jack at specific scroll points, simulating thoughts or dialogue tied to the moment. Interactive objects, like golden eggs, can be clicked to trigger small animations, and when all five are found, a secret easter egg scene—Golden Heaven—is revealed.
