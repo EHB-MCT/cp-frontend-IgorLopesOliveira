@@ -4,7 +4,8 @@ import { Link } from "react-router-dom";
 // receives props for the fairy tale item card
 function FairyTaleItem({ image, studentName, fairyTaleTitle, genre, link, internal }) {
   // fix the image path for GitHub Pages subdirectory deployment
-  const imagePath = `${import.meta.env.BASE_URL}${image}`;
+  const imagePath = image.startsWith("http") ? image : `${import.meta.env.BASE_URL}${image}`;
+
 
   // reusable content block for both internal and external links
   const content = (

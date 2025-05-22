@@ -19,7 +19,7 @@ const Footer = () => {
           </p>
 
           {/* button linking to the about us page */}
-          <Link to="/cp-frontend-IgorLopesOliveira/aboutus">
+          <Link to="/aboutus">
             <button className="footer-button">About Us</button>
           </Link>
         </div>

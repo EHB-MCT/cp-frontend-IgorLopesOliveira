@@ -22,7 +22,7 @@ function AboutUs() {
 
           {/* button linking back to the homepage with all projects */}
           <div className="about-button">
-            <Link to="/cp-frontend-IgorLopesOliveira/">
+            <Link to="/">
               <button className="all-projects-button">ALL PROJECTS</button>
             </Link>
           </div>
