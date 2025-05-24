@@ -37,17 +37,22 @@ function App() {
 
         // group items into chunks of 4 for the slideshow
         const chunked = [];
-        for (let i = 0; i < data.length; i += 4) {
-          const chunk = data.slice(i, i + 4).map(item => ({
-            image: item.imgThumbnail,
-            studentName: item.nameStudent,
-            fairyTaleTitle: item.fairytale,
-            genre: item.genre,
-            link: `/cp-frontend-IgorLopesOliveira/${item.id}`, // customize routing if needed
-            internal: false
-          }));
-          chunked.push(chunk);
-        }
+
+for (let i = 0; i < data.length; i += 2) {
+  const chunk = data.slice(i, i + 2).map((item) => ({
+    image: item.imgThumbnail,
+    studentName: item.nameStudent,
+    fairyTaleTitle: item.fairytale,
+    genre: item.genre,
+    link: `/makingof/${item.id}`, // ✅ correct link with id
+    internal: true,
+  }));
+
+  chunked.push(chunk);
+}
+
+setSlides(chunked);
+
 
         setSlides(chunked);
       } catch (err) {
@@ -88,7 +93,8 @@ function App() {
           <Route path="/sprookje" element={<JackStory />} />
 
           {/* other static pages */}
-          <Route path="/makingof" element={<MakingOf />} />
+          <Route path="/makingof/:id" element={<MakingOf />} />
+
           <Route path="/aboutus" element={<AboutUs />} />
         </Routes>
       </LayoutWrapper>

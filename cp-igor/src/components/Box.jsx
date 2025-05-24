@@ -1,38 +1,19 @@
 import { Link } from "react-router-dom";
 
-// box component displays a single fairy tale card with image and text
-const Box = ({ image, studentName, fairyTaleTitle, genre, link, internal }) => {
-  // build the correct image path for GitHub Pages
-  const imagePath = image.startsWith("http") ? image : `${import.meta.env.BASE_URL}${image}`;
-
-
-  // content to be wrapped inside a link
-  const content = (
-    <>
-      {/* image for the fairy tale */}
-      <img src={imagePath} alt={studentName} className="image" />
-
-      {/* student's name */}
-      <p className="student-name">{studentName}</p>
-
-      {/* title of the fairy tale */}
-      <p className="fairy-tale-title">{fairyTaleTitle}</p>
-
-      {/* genre of the fairy tale */}
-      <p className="genre">{genre}</p>
-    </>
-  );
+// Component for one featured card inside the slideshow
+const Box = ({ id, image, studentName, fairyTaleTitle, genre }) => {
+  const imagePath = image.startsWith("http")
+    ? image
+    : `${import.meta.env.BASE_URL}${image}`;
 
   return (
     <div className="box">
-      {/* internal or external link */}
-      {internal ? (
-        <Link to={link}>{content}</Link>
-      ) : (
-        <a href={link} target="_blank" rel="noopener noreferrer">
-          {content}
-        </a>
-      )}
+      <Link to={`/makingof/${id}`}>
+        <img src={imagePath} alt={studentName} className="image" />
+        <p className="student-name">{studentName}</p>
+        <p className="fairy-tale-title">{fairyTaleTitle}</p>
+        <p className="genre">{genre}</p>
+      </Link>
     </div>
   );
 };
