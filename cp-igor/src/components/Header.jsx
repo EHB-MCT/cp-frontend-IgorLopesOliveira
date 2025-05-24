@@ -43,10 +43,11 @@ function Header({ onSearch, onGenreSelect }) {
                 {dropdownOpen && (
                   <ul className="dropdown-menu">
                     <li><a onClick={() => onGenreSelect('')}>All</a></li> 
-                    <li><a onClick={() => onGenreSelect('Fantasy')}>Fantasy</a></li>
-                    <li><a onClick={() => onGenreSelect('Adventure')}>Adventure</a></li>
-                    <li><a onClick={() => onGenreSelect('Horror')}>Horror</a></li>
-                    <li><a onClick={() => onGenreSelect('Romance')}>Romance</a></li>
+                    <li><a onClick={() => onGenreSelect('fantasie')}>Fantasy</a></li>
+                    <li><a onClick={() => onGenreSelect('avontuur')}>Adventure</a></li>
+                    <li><a onClick={() => onGenreSelect('horror')}>Horror</a></li>
+                    <li><a onClick={() => onGenreSelect('mythologie')}>Mythology</a></li>
+                    <li><a onClick={() => onGenreSelect('magie')}>Magic</a></li>
                   </ul>
                 )}
               </li>
