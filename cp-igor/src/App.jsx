@@ -1,7 +1,9 @@
+// import react hooks and router components
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 
+// import component files
 import Header from './components/Header';
 import SlideShow from './components/SlideShow';
 import FairyTaleList from './components/FairyTaleList';
@@ -13,10 +15,10 @@ import MakingOfJack from './components/MakingOfJack';
 
 import { fetchFairyTales } from './api/fetchFairyTales';
 
-// layout wrapper for conditional header/footer rendering
+// layout wrapper to show or hide footer depending on the current route
 function LayoutWrapper({ children, onSearch, onGenreSelect }) {
   const location = useLocation();
-  const noFooterPages = ["/sprookje"]; // list of paths where Footer is hidden
+  const noFooterPages = ["/sprookje"]; // list of pages without footer
 
   const shouldShowFooter = !noFooterPages.includes(location.pathname);
 
@@ -30,57 +32,67 @@ function LayoutWrapper({ children, onSearch, onGenreSelect }) {
 }
 
 function App() {
+  // search bar input
   const [searchItem, setSearchItem] = useState('');
+
+  // selected genre from dropdown
   const [selectedGenre, setSelectedGenre] = useState('');
+
+  // array of slides for slideshow
   const [slides, setSlides] = useState([]);
 
+  // fetch data when component loads
   useEffect(() => {
     async function loadData() {
       try {
         const data = await fetchFairyTales();
 
-        // group items into chunks of 4 for the slideshow
+        // split items into chunks of 2 for slideshow
         const chunked = [];
 
-for (let i = 0; i < data.length; i += 2) {
-  const chunk = data.slice(i, i + 2).map((item) => ({
-    id: item.id,
-    image: item.imgThumbnail,
-    studentName: item.nameStudent,
-    fairyTaleTitle: item.fairytale,
-    genre: item.genre,
-    link: `/makingof/${item.id}`, // ✅ correct link with id
-    internal: true,
-  }));
+        for (let i = 0; i < data.length; i += 2) {
+          const chunk = data.slice(i, i + 2).map((item) => ({
+            id: item.id,
+            image: item.imgThumbnail,
+            studentName: item.nameStudent,
+            fairyTaleTitle: item.fairytale,
+            genre: item.genre,
+            link: `/makingof/${item.id}`, // link to individual making of page
+            internal: true,
+          }));
 
-  chunked.push(chunk);
-}
+          chunked.push(chunk);
+        }
 
         setSlides(chunked);
       } catch (err) {
-        console.error('Failed to load fairy tales:', err);
+        console.error('failed to load fairy tales:', err);
       }
     }
 
-    loadData();
+    loadData(); // run data fetch
   }, []);
 
-  // flatten for filtering in FairyTaleList
+  // flatten the array of chunks into one array for filtering
   const allItems = slides.flat();
+
+  // filter based on search input and selected genre
   const filteredItems = allItems.filter((item) =>
     item.fairyTaleTitle.toLowerCase().includes(searchItem.toLowerCase()) &&
     (selectedGenre === '' || item.genre.toLowerCase() === selectedGenre.toLowerCase())
   );
 
+  // callback for when a genre is selected
   const handleGenreSelect = (genre) => {
     setSelectedGenre(genre);
   };
 
   return (
+    // wrap app in router with a base path for github pages
     <Router basename="/cp-frontend-IgorLopesOliveira/">
       <LayoutWrapper onSearch={setSearchItem} onGenreSelect={handleGenreSelect}>
         <Routes>
-          {/* homepage: slideshow and filtered grid */}
+          {/* homepage shows slideshow and fairy tale list */}
           <Route
             path="/"
             element={
@@ -91,11 +103,16 @@ for (let i = 0; i < data.length; i += 2) {
             }
           />
 
-          {/* your custom Jack story */}
+          {/* custom jack story page */}
           <Route path="/sprookje" element={<JackStory />} />
-          {/* other static pages */}
+
+          {/* dynamic making of page for each student */}
           <Route path="/makingof/:id" element={<MakingOf />} />
+
+          {/* static making of page for jack */}
           <Route path="/makingof-jack" element={<MakingOfJack />} />
+
+          {/* about us page */}
           <Route path="/aboutus" element={<AboutUs />} />
         </Routes>
       </LayoutWrapper>

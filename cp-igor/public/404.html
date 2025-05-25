@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="refresh" content="0; url=/cp-frontend-IgorLopesOliveira/" />
+    <meta charset="utf-8">
+    <script type="text/javascript">
+      // Redirect to index.html and preserve the path
+      var path = window.location.pathname;
+      var newPath = '/cp-frontend-IgorLopesOliveira/index.html';
+      var query = window.location.search || '';
+      var hash = window.location.hash || '';
+      var fullPath = newPath + '?redirect=' + encodeURIComponent(path + query + hash);
+      window.location.replace(fullPath);
+    </script>
   </head>
   <body></body>
 </html>
