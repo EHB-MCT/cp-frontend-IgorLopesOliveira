@@ -65,6 +65,34 @@ function MakingOf() {
           ))}
         </div>
       </div>
+      {/* Button to view the parallax project */}
+      <button
+        onClick={() => {
+          if (data.fairytaleLink) {
+            window.open(data.fairytaleLink, "_blank");
+          } else {
+            alert("This project is still in progress.");
+          }
+        }}
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          padding: "12px 24px",
+          fontSize: "16px",
+          backgroundColor: "#000",
+          color: "#fff",
+          border: "none",
+          borderRadius: "8px",
+          cursor: "pointer",
+          zIndex: 1000,
+          boxShadow: "0 2px 6px rgba(0,0,0,0.2)",
+        }}
+      >
+        View Parallax Experience
+      </button>
+
     </div>
   );
 }

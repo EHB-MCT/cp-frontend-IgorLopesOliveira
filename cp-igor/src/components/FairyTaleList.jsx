@@ -14,14 +14,16 @@ const FairyTaleList = ({ slides }) => {
       <ul className="list-grid">
         {allItems.map((item, index) => (
           <FairyTaleItem
-            key={index}                         // unique key for each list item
-            image={item.image}                  // image of the fairy tale
-            studentName={item.studentName}      // name of the student
-            link={item.link}                    // external link to the fairy tale
-            fairyTaleTitle={item.fairyTaleTitle} // title of the fairy tale
-            genre={item.genre}    
-            internal={item.internal}              // genre of the story
+            key={index}
+            id={item.link.split('/').pop()}
+            image={item.image}
+            studentName={item.studentName}
+            link={item.link}
+            fairyTaleTitle={item.fairyTaleTitle}
+            genre={item.genre}
+            internal={item.internal}
           />
+
         ))}
       </ul>
     </div>

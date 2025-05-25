@@ -53,7 +53,7 @@ function Header({ onSearch, onGenreSelect }) {
               </li>
 
               {/* navigation links to making of and about us pages */}
-              <li><Link to="/makingof">MAKING OF</Link></li>
+              <li><Link to="/makingof-jack">MAKING OF</Link></li>
               <li><Link to="/aboutus">ABOUT US</Link></li>
             </ul>
           </nav>

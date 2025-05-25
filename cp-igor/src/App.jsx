@@ -9,18 +9,22 @@ import Footer from './components/Footer';
 import MakingOf from './components/MakingOf';
 import AboutUs from './components/AboutUs';
 import JackStory from './jack-components/JackStory';
+import MakingOfJack from './components/MakingOfJack';
+
 import { fetchFairyTales } from './api/fetchFairyTales';
 
 // layout wrapper for conditional header/footer rendering
 function LayoutWrapper({ children, onSearch, onGenreSelect }) {
   const location = useLocation();
-  const isFairyTalePage = location.pathname === "/cp-frontend-IgorLopesOliveira/sprookje";
+  const noFooterPages = ["/sprookje"]; // list of paths where Footer is hidden
+
+  const shouldShowFooter = !noFooterPages.includes(location.pathname);
 
   return (
     <>
       <Header onSearch={onSearch} onGenreSelect={onGenreSelect} />
       {children}
-      {!isFairyTalePage && <Footer />}
+      {shouldShowFooter && <Footer />}
     </>
   );
 }
@@ -40,6 +44,7 @@ function App() {
 
 for (let i = 0; i < data.length; i += 2) {
   const chunk = data.slice(i, i + 2).map((item) => ({
+    id: item.id,
     image: item.imgThumbnail,
     studentName: item.nameStudent,
     fairyTaleTitle: item.fairytale,
@@ -50,9 +55,6 @@ for (let i = 0; i < data.length; i += 2) {
 
   chunked.push(chunk);
 }
-
-setSlides(chunked);
-
 
         setSlides(chunked);
       } catch (err) {
@@ -75,7 +77,7 @@ setSlides(chunked);
   };
 
   return (
-    <Router basename="/cp-frontend-IgorLopesOliveira">
+    <Router basename="/cp-frontend-IgorLopesOliveira/">
       <LayoutWrapper onSearch={setSearchItem} onGenreSelect={handleGenreSelect}>
         <Routes>
           {/* homepage: slideshow and filtered grid */}
@@ -91,10 +93,9 @@ setSlides(chunked);
 
           {/* your custom Jack story */}
           <Route path="/sprookje" element={<JackStory />} />
-
           {/* other static pages */}
           <Route path="/makingof/:id" element={<MakingOf />} />
-
+          <Route path="/makingof-jack" element={<MakingOfJack />} />
           <Route path="/aboutus" element={<AboutUs />} />
         </Routes>
       </LayoutWrapper>
