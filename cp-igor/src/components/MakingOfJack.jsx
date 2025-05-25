@@ -44,7 +44,7 @@ function MakingOfJack() {
 
         <div className="image-section">
           <img
-            src={`${import.meta.env.BASE_URL}images/box1.png`}
+            src="images/thumbnail-jack.png"
             alt="Making Of"
             className="side-image"
           />
@@ -90,17 +90,17 @@ function MakingOfJack() {
         <h2 className="text-title">Extra Images</h2>
         <div className="extra-images">
           <img
-            src=".images/extraImage1.png"
+            src="images/extraImage1.png"
             alt="Extra 1"
             className="extra-image"
           />
           <img
-            src={`${import.meta.env.BASE_URL}`}
+            src="images/extraImage2.png"
             alt="Extra 2"
             className="extra-image"
           />
           <img
-            src={`${import.meta.env.BASE_URL}`}
+            src="images/extraImage3.png"
             alt="Extra 3"
             className="extra-image"
           />
