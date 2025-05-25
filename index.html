@@ -5,6 +5,13 @@
     <link rel="icon" href="/cp-frontend-IgorLopesOliveira/images/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jack and the Beanstalk</title>
+    <script type="text/javascript">
+    const params = new URLSearchParams(window.location.search);
+    const redirect = params.get('redirect');
+    if (redirect) {
+      window.history.replaceState(null, '', redirect);
+    }
+  </script>
     <script type="module" crossorigin src="/cp-frontend-IgorLopesOliveira/assets/index-DKZBmWbA.js"></script>
     <link rel="stylesheet" crossorigin href="/cp-frontend-IgorLopesOliveira/assets/index-D1h0jpQA.css">
   </head>
