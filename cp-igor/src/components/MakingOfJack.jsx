@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import YoutubeEmbed from './YoutubeEmbed';
+
 
 function MakingOfJack() {
   const [showMore, setShowMore] = useState(false);
@@ -105,6 +107,8 @@ function MakingOfJack() {
             className="extra-image"
           />
         </div>
+        <h2 className="text-title">Video Explainer</h2>
+        <YoutubeEmbed embedId="_X2czhUmok4" />
       </div>
 
       {/* fixed button to go to parallax */}

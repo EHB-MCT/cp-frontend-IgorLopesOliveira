@@ -2,6 +2,8 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { fetchFairyTales } from '../api/fetchFairyTales';
+import YoutubeEmbed from './YoutubeEmbed';
+
 
 function MakingOf() {
   // get the id from the url
@@ -88,6 +90,12 @@ function MakingOf() {
             />
           ))}
         </div>
+        {data.videoExplainer && (
+          <div className="video-container">
+            <h2 className="text-title">video explainer</h2>
+            <YoutubeEmbed embedId={data.videoExplainer} />
+          </div>
+        )}
       </div>
 
       {/* fixed button to view the parallax project or show alert if not available */}
