@@ -9,7 +9,6 @@ function MakingOfJack() {
     <div className="making-of-page">
       <h1 className="page-title">MAKING OF</h1>
 
-      {/* banner */}
       <div className="banner-container">
         <img
           src={`${import.meta.env.BASE_URL}images/bean-banner.png`}
@@ -18,7 +17,6 @@ function MakingOfJack() {
         />
       </div>
 
-      {/* description */}
       <div className="content-container">
         <div className="text-section">
           <h2 className="text-title">Story</h2>
@@ -53,7 +51,6 @@ function MakingOfJack() {
         </div>
       </div>
 
-      {/* read more */}
       {showMore && (
         <div className="extra-content">
           <h2 className="text-title">Extra Information</h2>
@@ -87,7 +84,6 @@ function MakingOfJack() {
         </button>
       </div>
 
-      {/* extra images */}
       <div className="extra-info-section">
         <h2 className="text-title">Extra Images</h2>
         <div className="extra-images">
@@ -111,7 +107,6 @@ function MakingOfJack() {
         <YoutubeEmbed embedId="_X2czhUmok4" />
       </div>
 
-      {/* fixed button to go to parallax */}
       <button
         onClick={() => (window.location.href = `${import.meta.env.BASE_URL}sprookje`)}
         style={{

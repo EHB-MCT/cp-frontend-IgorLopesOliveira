@@ -1,4 +1,3 @@
-// importing react hooks and child components
 import { useEffect, useState, useRef } from "react";
 import SceneTrade from "../jack-components/SceneTrade";
 import SceneHouse from "../jack-components/SceneHouse";
@@ -10,28 +9,17 @@ import TextClouds from "../jack-components/TextClouds";
 import GoldenHeaven from "../jack-components/GoldenHeaven";
 
 function JackStory() {
-  // stores current vertical scroll position
   const [scrollY, setScrollY] = useState(0);
-
-  // stores current jack image based on scroll
   const [jackImage, setJackImage] = useState("./images/jack111.png");
-
-  // keeps track of how many golden eggs have been collected
   const [eggCount, setEggCount] = useState(0);
-
-  // stores mute state of background music
   const [isMuted, setIsMuted] = useState(false);
-
-  // reference to the audio element
   const audioRef = useRef(null);
 
-  // runs on mount: scrolls to bottom and sets up scroll event
   useEffect(() => {
     const timeout = setTimeout(() => {
       window.scrollTo({ top: document.body.scrollHeight, behavior: "auto" });
     }, 50);
 
-    // updates scrollY and changes jack image based on scroll position
     const handleScroll = () => {
       const y = window.scrollY;
       setScrollY(y);
@@ -60,7 +48,6 @@ function JackStory() {
     };
   }, []);
 
-  // plays audio once on first user click
   useEffect(() => {
     const startAudio = () => {
       if (audioRef.current) {
@@ -74,7 +61,6 @@ function JackStory() {
     return () => window.removeEventListener("click", startAudio);
   }, []);
 
-  // increments egg count and checks for easter egg unlock
   const handleEggClick = () => {
     setEggCount((prev) => {
       const newCount = prev + 1;
@@ -85,7 +71,6 @@ function JackStory() {
     });
   };
 
-  // toggles mute state and updates audio element
   const toggleMute = () => {
     if (audioRef.current) {
       audioRef.current.muted = !audioRef.current.muted;
@@ -95,7 +80,6 @@ function JackStory() {
 
   return (
     <div className="jack-story-container">
-      {/* background that holds all the scenes */}
       <div className="gradient-background" style={{ height: "2000vh" }}>
         <SceneTrade scrollY={scrollY} onEggClick={handleEggClick} />
         <SceneHouse scrollY={scrollY} onEggClick={handleEggClick} />
@@ -106,19 +90,14 @@ function JackStory() {
         <GoldenHeaven scrollY={scrollY} show={eggCount === 5 && scrollY <= 1000} />
       </div>
 
-      {/* speech bubble that reacts to scroll */}
       <TextClouds scrollY={scrollY} />
 
-      {/* main character image */}
       <img src={jackImage} alt="Jack" className="jack" />
 
-      {/* displays current egg count */}
       <div className="egg-counter">🥚 {eggCount} / 5</div>
 
-      {/* background music that loops */}
       <audio ref={audioRef} src="./sounds/bgm1.mp3" loop />
 
-      {/* mute/unmute toggle button */}
       <button
         onClick={toggleMute}
         style={{

@@ -1,9 +1,7 @@
 function TextClouds({ scrollY }) {
-  // default text content and visibility
   let text = "";
   let visible = false;
 
-  // set text content based on scroll position ranges
   if (scrollY >= 13500 && scrollY <= 14500) {
     text = (
       <>
@@ -54,20 +52,18 @@ function TextClouds({ scrollY }) {
     visible = true;
   }
 
-  // do not render if outside any target scroll zone
   if (!visible) return null;
 
   return (
-    // cloud-shaped speech bubble fixed above Jack
     <div
       className="text-cloud"
       style={{
-        position: "fixed",               // stays in same position on screen
-        top: "15%",                      // vertical offset from top of screen
-        left: "50%",                     // centered horizontally
-        transform: "translateX(-50%)",   // adjust position to truly center
+        position: "fixed",
+        top: "15%",
+        left: "50%",
+        transform: "translateX(-50%)",
         padding: "20px 30px",
-        background: `url(./images/text-cloud.png) no-repeat center/contain`, // bubble background
+        background: `url(./images/text-cloud.png) no-repeat center/contain`,
         width: "400px",
         height: "120px",
         display: "flex",
@@ -77,11 +73,10 @@ function TextClouds({ scrollY }) {
         fontSize: "12px",
         fontWeight: "bold",
         color: "#333",
-        zIndex: 50,                      // place it above most elements
-        animation: "fadeIn 0.6s ease-out", // smooth appearance
+        zIndex: 50,
+        animation: "fadeIn 0.6s ease-out",
       }}
     >
-      {/* slightly nudged text inside the bubble */}
       <div style={{ transform: "translateY(-6px)" }}>{text}</div>
     </div>
   );

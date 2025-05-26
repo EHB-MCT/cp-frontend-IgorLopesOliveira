@@ -1,4 +1,3 @@
-// import hooks and data function
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { fetchFairyTales } from '../api/fetchFairyTales';
@@ -6,39 +5,31 @@ import YoutubeEmbed from './YoutubeEmbed';
 
 
 function MakingOf() {
-  // get the id from the url
   const { id } = useParams();
 
-  // state for the selected fairy tale data
   const [data, setData] = useState(null);
 
-  // state to show or hide the "read more" section
   const [showMore, setShowMore] = useState(false);
 
-  // fetch data when component mounts or id changes
   useEffect(() => {
     async function load() {
-      const all = await fetchFairyTales(); // fetch all fairy tales
-      const found = all.find((item) => item.id === id); // find the one with matching id
-      setData(found); // update state with selected story
+      const all = await fetchFairyTales();
+      const found = all.find((item) => item.id === id); 
+      setData(found); 
     }
-    load(); // run the fetch function
+    load(); 
   }, [id]);
 
-  // show loading message while data is not ready
   if (!data) return <p>loading...</p>;
 
   return (
     <div className="making-of-page">
-      {/* page title */}
       <h1 className="page-title">making of</h1>
 
-      {/* big banner image */}
       <div className="banner-container">
         <img src={data.imgBanner} alt="banner" className="banner-image" />
       </div>
 
-      {/* main content section with description and small image */}
       <div className="content-container">
         <div className="text-section">
           <h2 className="text-title">story</h2>
@@ -53,7 +44,6 @@ function MakingOf() {
         </div>
       </div>
 
-      {/* extra section visible when "read more" is clicked */}
       {showMore && (
         <div className="extra-content">
           <h2 className="text-title">making of</h2>
@@ -67,7 +57,6 @@ function MakingOf() {
         </div>
       )}
 
-      {/* button to show or hide extra content */}
       <div className="read-more-container">
         <button
           className="read-more-button"
@@ -77,7 +66,6 @@ function MakingOf() {
         </button>
       </div>
 
-      {/* show extra images if any */}
       <div className="extra-info-section">
         <h2 className="text-title">extra images</h2>
         <div className="extra-images">
@@ -98,7 +86,6 @@ function MakingOf() {
         )}
       </div>
 
-      {/* fixed button to view the parallax project or show alert if not available */}
       <button
         onClick={() => {
           if (data.fairytaleLink) {

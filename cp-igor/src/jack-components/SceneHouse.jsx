@@ -1,25 +1,17 @@
-// import react hooks and the golden egg component
 import { useState, useRef } from "react";
 import GoldenEgg from "../jack-components/GoldenEgg";
 
 function SceneHouse({ scrollY, onEggClick }) {
-  // base vertical scroll position where this scene begins
   const baseY = 12000;
-
-  // calculates how far user has scrolled into this scene
   const offsetY = scrollY - baseY;
 
   return (
-    // main container for the house scene, positioned absolutely
     <div className="scene-house" style={{ top: `${baseY}px` }}>
-
-      {/* clickable golden egg in the scene */}
       <GoldenEgg 
         style={{ left: "60%", bottom: "42%" }} 
         onClick={onEggClick} 
       />
 
-      {/* background clouds with different speeds for parallax effect */}
       <img
         src="./images/cloud2.png"
         className="cloud cloud-1"
@@ -36,21 +28,18 @@ function SceneHouse({ scrollY, onEggClick }) {
         style={{ transform: `translateY(${offsetY * 0.1}px)` }}
       />
 
-      {/* mountain background layer */}
       <img
         src="./images/bg1.png"
         className="mountains1"
         style={{ transform: `translateY(${offsetY * 0.25}px)` }}
       />
 
-      {/* tree image with faster parallax movement */}
       <img
         src="./images/tree3.png"
         className="tree1 tree-left"
         style={{ transform: `translateY(${offsetY * 0.6}px)` }}
       />
 
-      {/* grass foreground and narrative text block */}
       <div className="grass-container">
         <img src="./images/grass2.png" className="grass1" />
         <div className="grass-text">
@@ -67,7 +56,6 @@ function SceneHouse({ scrollY, onEggClick }) {
         </div>
       </div>
 
-      {/* house image in foreground */}
       <img src="./images/house1.png" className="house" />
     </div>
   );

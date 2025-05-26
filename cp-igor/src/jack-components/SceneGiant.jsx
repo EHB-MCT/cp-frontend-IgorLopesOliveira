@@ -1,25 +1,17 @@
-// import react hooks and the golden egg component
 import { useState, useRef } from "react";
 import GoldenEgg from "../jack-components/GoldenEgg";
 
 function SceneGiant({ scrollY, onEggClick }) {
-  // base vertical position where this scene starts
   const baseY = 2500;
-
-  // calculates how far the user has scrolled past this scene
   const offsetY = scrollY - baseY;
 
   return (
-    // positions the entire scene relative to the page
     <div className="scene-giant" style={{ top: `${baseY}px` }}>
-
-      {/* clickable golden egg */}
       <GoldenEgg 
         style={{ left: "26%", bottom: "89%" }} 
         onClick={onEggClick} 
       />
 
-      {/* wall background and narrative text */}
       <div className="wall-scene-container">
         <img
           src="./images/wall.png"
@@ -36,12 +28,10 @@ function SceneGiant({ scrollY, onEggClick }) {
         </div>
       </div>
 
-      {/* foreground characters and items */}
       <img src="./images/giant.png" className="giant" />
       <img src="./images/hen.png" className="hen" />
       <img src="./images/harp.png" className="harp" />
 
-      {/* background clouds with parallax movement */}
       <img
         src="./images/cloud3.png"
         className="cloud-1"

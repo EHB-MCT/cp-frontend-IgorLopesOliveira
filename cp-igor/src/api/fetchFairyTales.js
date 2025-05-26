@@ -1,5 +1,3 @@
-// src/api/fetchFairyTales.js
-
 export async function fetchFairyTales() {
   const response = await fetch(
     "https://raw.githubusercontent.com/EHB-MCT/cp-frontend-MaximWesterbeek/refs/heads/main/course-project/public/api/fairytaleList.json"
