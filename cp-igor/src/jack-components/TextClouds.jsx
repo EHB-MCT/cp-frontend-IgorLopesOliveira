@@ -2,7 +2,7 @@ function TextClouds({ scrollY }) {
   let text = "";
   let visible = false;
 
-  if (scrollY >= 13500 && scrollY <= 14500) {
+  if (scrollY >= 13500 && scrollY <= 15000) {
     text = (
       <>
         I'm going to trade the <br />

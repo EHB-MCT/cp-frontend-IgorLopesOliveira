@@ -81,6 +81,7 @@ function JackStory() {
   return (
     <div className="jack-story-container">
       <div className="gradient-background" style={{ height: "2000vh" }}>
+        <h1 className="jack-title">Jack and the Beanstalk</h1>
         <SceneTrade scrollY={scrollY} onEggClick={handleEggClick} />
         <SceneHouse scrollY={scrollY} onEggClick={handleEggClick} />
         <Stars top={0} />
